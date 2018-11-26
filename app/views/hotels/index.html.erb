@@ -1,0 +1,26 @@
+<div class="row">
+  <% @hotels.each do |hotel| %>
+  <div class="col">
+    <div class="card mb-3" style="width: 18rem;">
+      <img class="card-img-top" src="<%= hotel.img_url %>" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= hotel.name %></h5>
+        <p class="card-text ellipsis"><%= hotel.info %></p>
+        <%= link_to 'More information', hotel, :class => "btn btn-primary" %>
+        
+        <i class="material-icons float-right">
+          <%= link_to 'edit', edit_hotel_path(hotel), :style => "text-decoration:none" %>
+          <%= link_to 'delete', hotel, method: :delete, data: { confirm: 'Are you sure?' }, :style => "text-decoration:none" %>
+        </i>
+      </div>
+      <div class="card-footer bg-transparent border-light-50">
+        <%= hotel.price.to_s(:delimited) %>
+        <div class="float-right">
+          $
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<br>

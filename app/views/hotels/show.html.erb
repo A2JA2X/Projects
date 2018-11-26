@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1 class="display-4"><%= @hotel.name %></h1>
+</p>
+
+<p>
+  <strong><h4>Price</h4></strong>
+  <input class="form-control" type="text" placeholder="<%= @hotel.price %>" readonly>
+</p>
+
+<p>
+  <strong><h4>information</h4></strong>
+  <textarea name="information" class="form-control" rows="8" cols="80" readonly><%= @hotel.info %></textarea>
+</p>
+
+<p>
+  <img src="<%= @hotel.img_url %>" style="width: 600px;" alt="<%= @hotel.name %>">
+</p>
+
+<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
+<%= link_to 'Back', hotels_path %>
